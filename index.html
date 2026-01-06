@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillCraft Task 01</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background: #f4f6f8;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+            z-index: 1000;
+        }
+        header.scrolled {
+            background: #0f172a;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .logo {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 25px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 8px 14px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+        section {
+            height: 100vh;
+            padding: 120px 40px;
+        }
+        .hero {
+            background: linear-gradient(to right, #0f172a, #1e293b);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+        }
+        .content {
+            background: #ffffff;
+        }
+        .content h2 {
+            margin-bottom: 15px;
+            color: #0f172a;
+        }
+        .content p {
+            max-width: 700px;
+            line-height: 1.6;
+            color: #475569;
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="navbar">
+        <div class="logo">SkillCraft</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero" id="home">
+        <h1>Responsive Landing Page</h1>
+        <p>
+            This landing page contains a fixed interactive navigation menu
+            that changes style on scroll and hover, created as part of
+            SkillCraft Technology Internship Task 01.
+        </p>
+    </section>
+    <section class="content" id="about">
+        <h2>About</h2>
+        <p>
+            This project demonstrates HTML, CSS, and JavaScript skills by
+            implementing a responsive layout and interactive navigation menu.
+        </p>
+    </section>
+    <section class="content" id="services">
+        <h2>Services</h2>
+        <p>
+            The navigation bar remains fixed, changes color when scrolling,
+            and menu items respond visually when hovered.
+        </p>
+    </section>
+    <section class="content" id="contact">
+        <h2>Contact</h2>
+        <p>
+            Created for SkillCraft Technology Internship – Task 01.
+        </p>
+    </section>
+    <script>
+        const navbar = document.getElementById("navbar");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    </script>
+
+</body>
+</html>
